@@ -9,6 +9,7 @@
   left: $sidebar_width;
   display: flex;
   align-items: center;
+  z-index: 100;
 
   .close-panel {
     img {

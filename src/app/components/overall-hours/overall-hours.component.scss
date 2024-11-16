@@ -1,7 +1,7 @@
 @import '../../utils/main.scss';
 
 .overall {
-  padding: 20px 12px;
+  padding: 20px;
   font-family: $font_family;
 
   .title {
@@ -11,4 +11,69 @@
     margin: 0 8px;
     margin-bottom: 16px;
   }
+
+  .charts {
+    display: flex;
+
+
+    .chart {
+      padding-top: 20px;
+      padding-bottom: 5px;
+      border-radius: 10px;
+      border: 1px solid #E3E3E3;
+      background: #FBFBFB;
+    }
+
+    .piechart {
+      width: 45%;
+      margin-right: 16px;
+
+      .calloutLabelKey {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        font-family: $font_family;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16.8px;
+        margin-bottom: 13px;
+
+        .item {
+          display: flex;
+          align-items: center;
+
+          .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50px;
+            margin-right: 5px;
+          }
+
+          .text {
+            color: #767676;
+          }
+
+          .navy {
+            background-color: #091836;
+          }
+
+          .blue {
+            background-color: #03BCF3;
+          }
+        }
+
+        .hours {
+          color: #404040;
+        }
+      }
+    }
+
+    .barchart {
+      width: 100%;
+    }
+  }
+}
+
+ag-charts {
+  display: block;
 }

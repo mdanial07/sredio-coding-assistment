@@ -1,13 +1,13 @@
 <div class="timesheet">
   <div class="title">Timesheet Summary</div>
-  <div class="timesheet-widgets">
-    <div class="widget" *ngFor="let value of time_sheet_summary_widgets">
+  <div class="timesheet-widgets" *ngIf="timesheet_summary.length">
+    <div class="widget" *ngFor="let value of timesheet_summary">
       <div class="widget-top">
-        <div class="widget-name">{{value.name}}</div>
-        <div class="remind" *ngIf="value.remind">Remind All</div>
+        <div class="widget-name">{{value?.name}}</div>
+        <div class="remind" *ngIf="value?.remind">Remind All</div>
       </div>
       <div class="widget-bottom">
-        <div class="widget-value">{{value.value}}</div>
+        <div class="widget-value">{{value?.value}}</div>
         <div class="widget-rate" [ngClass]="value?.positive  ? 'green' : 'red'">
           <img src="assets/images/arrow-up.png" alt="arrow" *ngIf="value?.positive">
           <img src="assets/images/arrow-down.png" alt="arrow" *ngIf="!value?.positive">

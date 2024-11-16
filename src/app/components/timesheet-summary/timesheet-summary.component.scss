@@ -14,6 +14,7 @@
 
   .timesheet-widgets {
     display: flex;
+    flex-wrap: wrap;
 
     .widget {
       padding: 16px 16px;
@@ -21,6 +22,7 @@
       border-radius: 10px;
       margin: 0 8px;
       flex: 1;
+      margin-bottom: 16px;
 
       .widget-top {
         display: flex;
