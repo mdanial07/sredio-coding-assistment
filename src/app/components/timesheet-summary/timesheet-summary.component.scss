@@ -1,0 +1,91 @@
+@import '../../utils/main.scss';
+
+.timesheet {
+  padding: 20px 12px;
+  font-family: $font_family;
+
+  .title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20.8px;
+    margin: 0 8px;
+    margin-bottom: 16px;
+  }
+
+  .timesheet-widgets {
+    display: flex;
+
+    .widget {
+      padding: 16px 16px;
+      border: 1px solid #E3E3E3;
+      border-radius: 10px;
+      margin: 0 8px;
+      flex: 1;
+
+      .widget-top {
+        display: flex;
+        justify-content: space-between;
+
+        .widget-name {
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 21px;
+          color: #767676;
+        }
+
+        .remind {
+          color: #091836;
+          font-size: 12px;
+          font-weight: 700;
+          line-height: 16.8px;
+          text-decoration-line: underline;
+          text-decoration-style: solid;
+        }
+      }
+
+      .widget-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 11px;
+
+        .widget-value {
+          font-size: 22px;
+          font-weight: 700;
+          line-height: 30.8px;
+          color: #000000;
+        }
+
+        .widget-rate {
+          width: 56px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 4px;
+          border-radius: 4px;
+
+          img {
+            width: 18px;
+          }
+
+          span {
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 16.8px;
+          }
+
+        }
+
+        .green {
+          background-color: #E9F8EE;
+          color: #53AF57;
+        }
+
+        .red {
+          background-color: #F8E9E9;
+          color: #B14040;
+        }
+      }
+    }
+  }
+}

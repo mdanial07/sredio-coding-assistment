@@ -1,0 +1,30 @@
+<div class="sidebar">
+  <div class="logo">
+    <img src="assets/images/logo.svg" alt="logo">
+  </div>
+
+  <div class="navigation-panel">
+    <div class="title">GENERAL</div>
+    <div class="navigation-list">
+      <div class="navigation-item" *ngFor="let value of general_navigation" [routerLink]="value.route"
+        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <img [src]="value.img" alt="nav">
+        <span>{{value.title}}</span>
+      </div>
+    </div>
+    <div class="title">TOOLS</div>
+    <div class="navigation-list">
+      <div class="navigation-item" *ngFor="let value of tools_navigation">
+        <img [src]="value.img" alt="nav">
+        <span>{{value.title}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="assistance">
+    <div class="title">Need Assistance?</div>
+    <div class="support-line">
+      For Report, Support or Suggestions, Please reach out to <a href="mailto:success@sred.io">success&#64;sred.io</a>
+    </div>
+  </div>
+</div>

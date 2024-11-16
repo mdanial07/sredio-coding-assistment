@@ -1,0 +1,14 @@
+@import '../../utils/main.scss';
+
+.project-hours {
+  padding: 20px 12px;
+  font-family: $font_family;
+
+  .title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20.8px;
+    margin: 0 8px;
+    margin-bottom: 16px;
+  }
+}

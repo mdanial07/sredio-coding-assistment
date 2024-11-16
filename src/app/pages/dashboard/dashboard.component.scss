@@ -1,0 +1,13 @@
+@import '../../utils/main.scss';
+
+.dashboard {
+  padding: 32px;
+
+  .widget-item {
+    background-color: $bg_white_color;
+    width: 100%;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    color: #454545;
+  }
+}
