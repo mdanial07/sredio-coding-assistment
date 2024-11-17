@@ -45,6 +45,7 @@
       display: flex;
       align-items: center;
       margin-bottom: 24px;
+      font-size: 14px;
 
       .tags {
         display: flex;
@@ -52,7 +53,7 @@
         margin-left: 4px;
 
         .tag {
-          font-size: 14px;
+          font-size: 12px;
           font-weight: 700;
           background: #C9F3FF;
           line-height: 21px;
@@ -71,5 +72,33 @@
     border-radius: 16px;
     margin-bottom: 24px;
     color: #454545;
+  }
+}
+
+@media only screen and (max-width: 997px) {
+  .dashboard {
+    .profile-details {
+      .header {
+        .heading {
+          .title {
+            font-size: 16px;
+          }
+
+          .date {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .integrations {
+        .tags .tag {
+          padding: 4px 14px;
+        }
+      }
+    }
+
+    .summary {
+      display: none;
+    }
   }
 }

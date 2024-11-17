@@ -76,3 +76,15 @@
 ag-charts {
   display: block;
 }
+
+@media only screen and (max-width: 997px) {
+  .charts {
+    flex-direction: column;
+
+    .piechart {
+      width: 100% !important;
+      margin: 0;
+      margin-bottom: 16px;
+    }
+  }
+}

@@ -14,8 +14,34 @@
   .close-panel {
     img {
       width: 24px;
-      margin-left: 32px;
+      margin: 0 32px;
       cursor: pointer;
     }
+  }
+
+  .search {
+    position: relative;
+
+    input {
+      border: 1px solid #B0B0B0;
+      border-radius: 8px;
+      height: 40px;
+      padding: 0 16px;
+      font-family: $font_family;
+      width: 300px;
+    }
+
+    img {
+      position: absolute;
+      width: 24px;
+      right: 16px;
+      top: 10px;
+    }
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .header {
+    left: 0px;
   }
 }

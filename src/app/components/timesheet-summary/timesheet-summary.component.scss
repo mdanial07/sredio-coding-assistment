@@ -91,3 +91,22 @@
     }
   }
 }
+
+
+@media only screen and (max-width: 770px) {
+  .timesheet {
+    .timesheet-widgets {
+      .widget {
+        flex: unset;
+        width: 100%;
+      }
+    }
+
+    .main-pages {
+      position: relative;
+      left: 0px;
+      top: $header_height;
+      width: 100%;
+    }
+  }
+}
