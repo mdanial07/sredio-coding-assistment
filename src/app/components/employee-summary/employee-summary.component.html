@@ -1,11 +1,12 @@
 <div class="employee-summary">
-  <div class="title">Employee’s Summary</div>
-  <div>
-    <ag-grid-angular 
-      #empTable class="ag-theme-quartz" 
-      style="width: 100%; height: 100%;" 
-      [rowData]="rowData"
-      [columnDefs]="colDefs" 
-    />
-  </div>
+  <app-emp-table 
+    [title]="'Employee’s Summary'"
+    [rowHeight]="rowHeight"
+    [rowData]="rowData"
+    [colDefs]="colDefs"
+    [tableId]="'emp-summary'"
+  >
+  </app-emp-table>
 </div>
+
+<img src="" alt="">

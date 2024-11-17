@@ -1,3 +1,10 @@
-<div class="sred-summary">
-  <div class="title">SR & ED Summary</div>
+<div class="employee-summary">
+  <app-emp-table 
+    [title]="'SR & ED Summary'"
+    [rowHeight]="rowHeight"
+    [rowData]="rowData"
+    [colDefs]="colDefs"
+    [tableId]="'sred-summary'"
+  >
+  </app-emp-table>
 </div>

@@ -1,0 +1,35 @@
+<div class="employee-summary">
+  <div class="header-top">
+    <div class="title">{{title}}</div>
+    <div class="view">
+      <div class="text">View All</div>
+      <img src="assets/images/drag.png" alt="icon">
+    </div>
+  </div>
+  <div class="actions-and-searchbar">
+    <div class="search">
+      <input type="text" [id]="tableId" placeholder="Seach for employee" (input)="onFilterTextBoxChanged()">
+      <img src="assets/images/search.png" alt="search">
+    </div>
+    <div class="actions">
+      <div class="action-button">
+        <span>Filter</span>
+        <img src="assets/images/filter.png" alt="action">
+      </div>
+      <div class="action-button" (click)="onBtExport()">
+        <span>Export</span>
+        <img src="assets/images/download.png" alt="action">
+      </div>
+    </div>
+  </div>
+  <div>
+    <ag-grid-angular 
+      class="ag-theme-quartz" 
+      style="width: 100%; height: 351px;"
+      [rowHeight]="rowHeight"
+      [rowData]="rowData"
+      [columnDefs]="colDefs"
+      (gridReady)="onGridReady($event)"
+    />
+  </div>
+</div>

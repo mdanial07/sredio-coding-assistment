@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 
 @Injectable()
-export class OverallHoursService {
+export class ChartsService {
 
   getTotalWorkedHours() {
     const total_hours = [
@@ -11,6 +11,7 @@ export class OverallHoursService {
     ]
     return of(total_hours)
   }
+
   getCumulativeHours() {
     const cumulative_hours = [
       {
@@ -60,5 +61,51 @@ export class OverallHoursService {
       }
     ]
     return of(cumulative_hours)
+  }
+
+  getProjectHours() {
+    const project_hours = [
+      {
+        month: "Apple",
+        total_hours: 250,
+      },
+      {
+        month: "Walmart",
+        total_hours: 600,
+      },
+      {
+        month: "Microsoft",
+        total_hours: 40,
+      },
+      {
+        month: "Project 01",
+        total_hours: 150,
+      },
+      {
+        month: "Project 02",
+        total_hours: 400,
+      },
+      {
+        month: "Project 03",
+        total_hours: 600,
+      },
+      {
+        month: "Project 04",
+        total_hours: 180,
+      },
+      {
+        month: "Project 05",
+        total_hours: 480,
+      },
+      {
+        month: "Project 06",
+        total_hours: 150,
+      },
+      {
+        month: "Project 07",
+        total_hours: 40,
+      }
+    ]
+    return of(project_hours)
   }
 }

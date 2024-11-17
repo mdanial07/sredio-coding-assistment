@@ -24,6 +24,7 @@
     "@angular/ssr": "^18.2.11",
     "ag-charts-angular": "^10.3.3",
     "ag-grid-angular": "^32.3.3",
+    "ag-grid-community": "^32.3.3",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

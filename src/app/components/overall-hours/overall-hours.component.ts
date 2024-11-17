@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { AgCharts } from "ag-charts-angular";
 import { AgChartOptions } from "ag-charts-community";
 
-import { OverallHoursService } from '../../services/overall_hours';
+import { ChartsService } from '../../services/overall_hours';
 
 @Component({
   selector: 'app-overall-hours',
   standalone: true,
   imports: [AgCharts],
-  providers: [OverallHoursService],
+  providers: [ChartsService],
   templateUrl: './overall-hours.component.html',
   styleUrl: './overall-hours.component.scss'
 })
@@ -16,7 +16,7 @@ export class OverallHoursComponent implements OnInit {
   public barChartOptions: AgChartOptions | any;
   public donutChartOptions: AgChartOptions | any;
 
-  constructor(private overall: OverallHoursService) { }
+  constructor(private charts: ChartsService) { }
 
   ngOnInit(): void {
     this.getTotalWorkedHours();
@@ -24,7 +24,7 @@ export class OverallHoursComponent implements OnInit {
   }
 
   getTotalWorkedHours(): void {
-    this.overall.getTotalWorkedHours().subscribe(total_hours => {
+    this.charts.getTotalWorkedHours().subscribe(total_hours => {
       this.donutChartOptions = {
         data: total_hours,
         background: {
@@ -52,7 +52,7 @@ export class OverallHoursComponent implements OnInit {
   }
 
   getCumulativeHours(): void {
-    this.overall.getCumulativeHours().subscribe(cumulative_hours => {
+    this.charts.getCumulativeHours().subscribe(cumulative_hours => {
       this.barChartOptions = {
         data: cumulative_hours,
         background: {
@@ -65,7 +65,7 @@ export class OverallHoursComponent implements OnInit {
             yKey: "total_hours",
             yName: "Total Hours",
             fill: '#091836',
-            cornerRadius: 4 
+            cornerRadius: 4
           },
           {
             type: "bar",
@@ -73,7 +73,7 @@ export class OverallHoursComponent implements OnInit {
             yKey: "cumulative_hours",
             yName: "Cumulative Hours",
             fill: '#03BCF3',
-            cornerRadius: 4 
+            cornerRadius: 4
           }
         ],
       };
