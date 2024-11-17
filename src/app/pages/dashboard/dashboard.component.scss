@@ -3,6 +3,68 @@
 .dashboard {
   padding: 32px;
 
+  .profile-details {
+    font-family: $font-family;
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+
+      .heading {
+        .title {
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 31.2px;
+          color: #2A2A2A;
+          margin-bottom: 8px;
+        }
+
+        .date {
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 21px;
+          color: #5D5D5D;
+          background-color: #F0F0F0;
+          padding: 4px 8px;
+          border-radius: 60px;
+          width: fit-content;
+        }
+      }
+
+      .refresh-icon {
+        img {
+          height: 48px;
+        }
+      }
+    }
+
+    .integrations {
+      color: #454545;
+      display: flex;
+      align-items: center;
+      margin-bottom: 24px;
+
+      .tags {
+        display: flex;
+        align-items: center;
+        margin-left: 4px;
+
+        .tag {
+          font-size: 14px;
+          font-weight: 700;
+          background: #C9F3FF;
+          line-height: 21px;
+          border-radius: 60px;
+          width: fit-content;
+          padding: 4px 20px;
+          margin: 0 4px;
+        }
+      }
+    }
+  }
+
   .widget-item {
     background-color: $bg_white_color;
     width: 100%;

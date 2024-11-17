@@ -68,6 +68,7 @@ export class ChartsService {
       {
         month: "Apple",
         total_hours: 250,
+        color: '#aaff99',
       },
       {
         month: "Walmart",
