@@ -1,9 +1,29 @@
 <div class="header">
-  <div class="close-panel">
-    <img src="assets/images/panel-close.png" alt="close">
+  <div class="left-actions">
+    <div class="close-panel">
+      <img src="assets/images/panel-close.png" alt="close">
+    </div>
+    <div class="search">
+      <input type="text" placeholder="Seach">
+      <img src="assets/images/search.png" alt="search">
+    </div>
   </div>
-  <div class="search">
-    <input type="text" placeholder="Seach">
-    <img src="assets/images/search.png" alt="search">
+  <div class="right-actions">
+    <img src="assets/images/mail.png" alt="icon">
+    <img src="assets/images/notifications.png" alt="icon">
+
+    <div class="divider"></div>
+
+    <div class="datepicker">
+      <mat-form-field>
+        <mat-label>Fiscal Period</mat-label>
+        <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+          <input matStartDate formControlName="start" placeholder="Start date">
+          <input matEndDate formControlName="end" placeholder="End date">
+        </mat-date-range-input>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+    </div>
   </div>
 </div>

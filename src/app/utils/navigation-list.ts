@@ -7,7 +7,8 @@ export const general_navigation = [
   {
     title: 'Navigation 02',
     route: '/nav2',
-    img: 'assets/images/store.png'
+    img: 'assets/images/store.png',
+    multi: true,
   },
   {
     title: 'Navigation 03',

@@ -3,13 +3,38 @@
     <img src="assets/images/logo.svg" alt="logo">
   </div>
 
+  <div class="profile-details">
+    <div class="dropdown" [matMenuTriggerFor]="menu">
+      <div class="profile">
+        <img src="assets/images/profile-image.png" alt="profile">
+        <div class="detail">
+          <div class="name">John Doe</div>
+          <div class="level">Admin</div>
+        </div>
+      </div>
+      <div class="menu">
+        <img src="assets/images/arrow-down-simple.png" alt="profile">
+      </div>
+    </div>
+    <mat-menu #menu="matMenu" yPosition="below">
+      <div class="options">
+        <div class="option">Logout</div>
+      </div>
+    </mat-menu>
+  </div>
+
   <div class="navigation-panel">
     <div class="title">GENERAL</div>
     <div class="navigation-list">
       <div class="navigation-item" *ngFor="let value of general_navigation" [routerLink]="value.route"
         routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-        <img [src]="value.img" alt="nav">
-        <span>{{value.title}}</span>
+        <div class="item">
+          <img [src]="value.img" alt="nav">
+          <span>{{value.title}}</span>
+        </div>
+        <div class="icon" *ngIf="value?.multi">
+          <img src="assets/images/arrow-down-simple.png" alt="profile">
+        </div>
       </div>
     </div>
     <div class="title">TOOLS</div>
