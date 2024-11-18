@@ -19,23 +19,25 @@
     </div>
   </div>
 
-  <div class="widget-item">
-    <app-overall-hours></app-overall-hours>
-  </div>
+  <ng-content *ngIf="isBrowser">
+    <div class="widget-item">
+      <app-overall-hours></app-overall-hours>
+    </div>
 
-  <div class="widget-item">
-    <app-timesheet-summary [timesheet_summary]="timesheet_summary"></app-timesheet-summary>
-  </div>
+    <div class="widget-item">
+      <app-timesheet-summary [timesheet_summary]="timesheet_summary"></app-timesheet-summary>
+    </div>
 
-  <div class="widget-item">
-    <app-project-hours></app-project-hours>
-  </div>
+    <div class="widget-item">
+      <app-project-hours></app-project-hours>
+    </div>
 
-  <div class="widget-item summary">
-    <app-employee-summary></app-employee-summary>
-  </div>
+    <div class="widget-item summary">
+      <app-employee-summary></app-employee-summary>
+    </div>
 
-  <div class="widget-item summary">
-    <app-sred-summary></app-sred-summary>
-  </div>
+    <div class="widget-item summary">
+      <app-sred-summary></app-sred-summary>
+    </div>
+  </ng-content>
 </div>

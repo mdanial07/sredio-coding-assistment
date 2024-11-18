@@ -1,13 +1,12 @@
-import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AgCharts } from "ag-charts-angular";
 import { AgChartOptions } from "ag-charts-community";
 import { ChartsService } from '../../services/overall_hours';
-import { isPlatformBrowser, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-overall-hours',
   standalone: true,
-  imports: [AgCharts, NgIf],
+  imports: [AgCharts],
   providers: [ChartsService],
   templateUrl: './overall-hours.component.html',
   styleUrl: './overall-hours.component.scss'
@@ -15,16 +14,10 @@ import { isPlatformBrowser, NgIf } from '@angular/common';
 export class OverallHoursComponent implements OnInit {
   public barChartOptions: AgChartOptions | any;
   public donutChartOptions: AgChartOptions | any;
-  isBrowser: boolean = false;
 
-  constructor(
-    private charts: ChartsService,
-    @Inject(PLATFORM_ID) private platformId: Object
-  ) { }
+  constructor(private charts: ChartsService) { }
 
   ngOnInit(): void {
-    this.isBrowser = isPlatformBrowser(this.platformId);
-
     this.getTotalWorkedHours();
     this.getCumulativeHours();
   }
