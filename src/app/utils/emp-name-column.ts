@@ -1,4 +1,4 @@
-import { ICellRendererParams } from '@ag-grid-community/core';
+import { ICellRendererParams } from "ag-grid-community";
 
 export function EmployeeNameAndImage(params: ICellRendererParams) {
   const image = `<img src="assets/images/${params.data.image}.png" alt="img" style="width: 24px; margin-right: 12px">`;
