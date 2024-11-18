@@ -1,6 +1,6 @@
 <div class="overall">
   <div class="title">Overall Hours</div>
-  <div class="charts">
+  <div class="charts" *ngIf="isBrowser">
     <div class="chart piechart">
       <ag-charts [options]="donutChartOptions"></ag-charts>
       <div class="calloutLabelKey">

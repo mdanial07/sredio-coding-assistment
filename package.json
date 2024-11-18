@@ -12,6 +12,7 @@
   "private": true,
   "dependencies": {
     "@ag-grid-community/angular": "^32.3.3",
+    "@ag-grid-community/csv-export": "^32.3.3",
     "@angular/animations": "^18.2.0",
     "@angular/cdk": "^18.2.13",
     "@angular/common": "^18.2.0",

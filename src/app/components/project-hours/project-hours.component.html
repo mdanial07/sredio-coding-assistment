@@ -1,6 +1,6 @@
 <div class="project-hours">
   <div class="title">Project Hours</div>
-  <div class="chart barchart">
+  <div class="chart barchart" *ngIf="isBrowser">
     <ag-charts [options]="barChartOptions" style="width: 100%; height: 400px; display: block"></ag-charts>
   </div>
 </div>

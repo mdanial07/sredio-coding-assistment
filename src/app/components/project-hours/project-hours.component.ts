@@ -1,22 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { AgCharts } from "ag-charts-angular";
 import { AgChartOptions } from "ag-charts-community";
 import { ChartsService } from '../../services/overall_hours';
+import { isPlatformBrowser, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-project-hours',
   standalone: true,
-  imports: [AgCharts],
+  imports: [AgCharts, NgIf],
   providers: [ChartsService],
   templateUrl: './project-hours.component.html',
   styleUrl: './project-hours.component.scss'
 })
 export class ProjectHoursComponent {
   public barChartOptions!: AgChartOptions;
+  isBrowser: boolean = false;
 
-  constructor(private charts: ChartsService) { }
+  constructor(
+    private charts: ChartsService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) { }
 
   ngOnInit(): void {
+    this.isBrowser = isPlatformBrowser(this.platformId);
     this.getProjectHours();
   }
 
