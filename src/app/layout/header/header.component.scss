@@ -118,5 +118,21 @@
 @media only screen and (max-width: 770px) {
   .header {
     left: 0px;
+    width: 100%;
+
+    .left-actions {
+      .search {
+        input {
+          max-width: 300px;
+          width: auto;
+        }
+      }
+    }
+
+    .right-actions {
+      .datepicker {
+        display: none;
+      }
+    }
   }
 }
