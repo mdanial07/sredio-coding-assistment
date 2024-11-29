@@ -1,0 +1,29 @@
+.AddProject {
+  width: 750px;
+  padding: 20px;
+
+  .heading {
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    line-height: 30px;
+    margin: 10px 0 20px;
+  }
+
+  .form {
+    padding: 10px 20px;
+
+    mat-form-field {
+      width: 100%;
+    }
+
+    .submitButton {
+      padding: 0 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+  }
+}

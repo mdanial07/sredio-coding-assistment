@@ -12,7 +12,10 @@
   "private": true,
   "dependencies": {
     "@ag-grid-community/angular": "^32.3.3",
+    "@ag-grid-community/client-side-row-model": "^32.3.3",
     "@ag-grid-community/csv-export": "^32.3.3",
+    "@ag-grid-enterprise/menu": "^32.3.3",
+    "@ag-grid-enterprise/row-grouping": "^32.3.3",
     "@angular/animations": "^18.2.0",
     "@angular/cdk": "^18.2.13",
     "@angular/common": "^18.2.0",
@@ -31,6 +34,8 @@
     "express": "^4.18.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "uuid": "^11.0.3",
+    "xlsx": "^0.18.5",
     "zone.js": "~0.14.10"
   },
   "devDependencies": {

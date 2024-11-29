@@ -5,14 +5,14 @@ export const general_navigation = [
     img: 'assets/images/overview.png'
   },
   {
-    title: 'Navigation 02',
-    route: '/nav2',
+    title: 'Project List',
+    route: '/project-list',
     img: 'assets/images/store.png',
-    multi: true,
+    multi: false,
   },
   {
-    title: 'Navigation 03',
-    route: '/nav3',
+    title: 'Archived List',
+    route: '/archive-list',
     img: 'assets/images/note-01.png'
   },
   {
