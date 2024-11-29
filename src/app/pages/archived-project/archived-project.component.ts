@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { GridApi } from 'ag-grid-community';
 import { AgGridAngular } from "@ag-grid-community/angular";
-import { EmpTableComponent } from '../../components/emp-table/emp-table.component';
 import { ColDef, GetContextMenuItemsParams, MenuItemDef, ModuleRegistry, RowSelectionOptions } from "@ag-grid-community/core";
 import { MenuModule } from "@ag-grid-enterprise/menu";
 import { ClientSideRowModelModule } from '@ag-grid-community/client-side-row-model';
@@ -13,7 +12,7 @@ ModuleRegistry.registerModules([ClientSideRowModelModule, MenuModule,]);
 @Component({
   selector: 'app-archived-project',
   standalone: true,
-  imports: [AgGridAngular, MatSnackBarModule, EmpTableComponent],
+  imports: [AgGridAngular, MatSnackBarModule],
   templateUrl: './archived-project.component.html',
   styleUrl: './archived-project.component.scss'
 })
@@ -68,7 +67,7 @@ export class ArchivedProjectComponent {
   getContextMenuItems(params: GetContextMenuItemsParams): (string | MenuItemDef)[] {
     const result: (string | MenuItemDef)[] = [
       {
-        name: "Retore",
+        name: "Restore",
         action: () => {
           this.restoreProject(params);
         },
@@ -82,13 +81,13 @@ export class ArchivedProjectComponent {
     if (selectedRows.length > 0) {
       const getArchivedProject = localStorage.getItem('archived-list')
       if (getArchivedProject) {
-        const currentlist = JSON.parse(getArchivedProject)
+        const currentList = JSON.parse(getArchivedProject)
 
         selectedRows.map((selected: any) => {
-          const indexToRemove = currentlist.findIndex((item: any) => (item.id === selected.id));
+          const indexToRemove = currentList.findIndex((item: any) => (item.id === selected.id));
           if (indexToRemove !== -1) {
-            this.restoredProject = currentlist[indexToRemove];
-            currentlist.splice(indexToRemove, 1);
+            this.restoredProject = currentList[indexToRemove];
+            currentList.splice(indexToRemove, 1);
             this.restoredProjectFromArchived();
           }
         })
@@ -96,7 +95,7 @@ export class ArchivedProjectComponent {
           this.snackBar.open("Project has been successfullu restored", 'close', {
             duration: 2000
           });
-          localStorage.setItem('archived-list', JSON.stringify(currentlist as any))
+          localStorage.setItem('archived-list', JSON.stringify(currentList as any))
           this.getList();
         }, 100);
       }
@@ -106,9 +105,9 @@ export class ArchivedProjectComponent {
   restoredProjectFromArchived(): void {
     const getProjectList = localStorage.getItem('project-list')
     if (getProjectList) {
-      const currentlist = JSON.parse(getProjectList);
-      currentlist.push(this.restoredProject)
-      localStorage.setItem('project-list', JSON.stringify(currentlist as any))
+      const currentList = JSON.parse(getProjectList);
+      currentList.push(this.restoredProject)
+      localStorage.setItem('project-list', JSON.stringify(currentList as any))
     } else {
       localStorage.setItem('project-list', JSON.stringify([this.restoredProject] as any))
     }

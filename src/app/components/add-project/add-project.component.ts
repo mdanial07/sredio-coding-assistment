@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { MAT_DIALOG_DATA, MatDialogTitle, MatDialogContent, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { v4 as uuidv4 } from 'uuid';
@@ -12,11 +12,9 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
   selector: 'app-add-project',
   standalone: true,
   imports: [
-    MatDialogTitle,
     MatLabel,
     MatInputModule,
     MatFormFieldModule,
-    MatDialogContent,
     MatSelectModule,
     ReactiveFormsModule,
     CommonModule,

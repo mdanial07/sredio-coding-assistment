@@ -1,4 +1,4 @@
-import { Component, inject, ChangeDetectionStrategy } from "@angular/core";
+import { Component, inject } from "@angular/core";
 import { AgGridAngular } from "@ag-grid-community/angular";
 import { ClientSideRowModelModule } from "@ag-grid-community/client-side-row-model";
 import { ColDef, GetContextMenuItemsParams, MenuItemDef, ModuleRegistry, RowSelectionOptions } from "@ag-grid-community/core";
@@ -15,7 +15,6 @@ import { v4 as uuidv4 } from 'uuid';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { DatePipe, JsonPipe } from "@angular/common";
 import { provideNativeDateAdapter } from '@angular/material/core';
 
 ModuleRegistry.registerModules([
@@ -34,13 +33,10 @@ ModuleRegistry.registerModules([
     MatDatepickerModule,
     FormsModule,
     ReactiveFormsModule,
-    JsonPipe,
-    DatePipe,
   ],
   providers: [ProjectListService, provideNativeDateAdapter()],
   templateUrl: './navigation02.component.html',
   styleUrl: './navigation02.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Navigation02Component {
   title = 'John Doe'
@@ -55,7 +51,7 @@ export class Navigation02Component {
   columnDefs: ColDef[] = [
     { field: "project_name", headerName: 'Project Name', enableRowGroup: true, sortable: true },
     { field: "hours_in_project", headerName: 'Project Hours', enableRowGroup: true, sortable: true },
-    { field: "time_records", headerName: 'Time records', initialRowGroup: true, enableRowGroup: true, sortable: true },
+    { field: "time_records", headerName: 'Time records', enableRowGroup: true, sortable: true },
     { field: "is_included", headerName: 'Is Included', enableRowGroup: true, sortable: true },
     { field: "integration_from", headerName: 'Integration From', enableRowGroup: true, sortable: true },
     { field: "created_by", headerName: 'Created By', enableRowGroup: true, sortable: true },
@@ -157,18 +153,18 @@ export class Navigation02Component {
     const getProjectList = localStorage.getItem('project-list')
     if (getProjectList) {
       const selectedRows = this.gridApi.getSelectedRows()
-      const currentlist = JSON.parse(getProjectList)
+      const currentList = JSON.parse(getProjectList)
       selectedRows.map((selected: any) => {
-        const indexToRemove = currentlist.findIndex((item: any) => (item.id === selected.id));
+        const indexToRemove = currentList.findIndex((item: any) => (item.id === selected.id));
         if (indexToRemove !== -1) {
-          this.archivedProject = currentlist[indexToRemove];
-          currentlist.splice(indexToRemove, 1);
+          this.archivedProject = currentList[indexToRemove];
+          currentList.splice(indexToRemove, 1);
           this.addDeletedItemInArchived();
         }
       })
       setTimeout(() => {
-        localStorage.setItem('project-list', JSON.stringify(currentlist as any))
-        this.snackBar.open("Project succefully has been deleted", 'close', {
+        localStorage.setItem('project-list', JSON.stringify(currentList as any))
+        this.snackBar.open("Project successfully has been deleted", 'close', {
           duration: 2000
         });
         this.getList(this.range.value.start, this.range.value.end);
@@ -181,10 +177,10 @@ export class Navigation02Component {
     if (target.files.length !== 1) {
       throw new Error('Cannot use multiple files');
     }
-    const filereader: FileReader = new FileReader();
-    const selectedfile = event.target.files[0];
-    filereader.readAsBinaryString(selectedfile);
-    filereader.onload = (event: any) => {
+    const fileReader: FileReader = new FileReader();
+    const selectedFile = event.target.files[0];
+    fileReader.readAsBinaryString(selectedFile);
+    fileReader.onload = (event: any) => {
       let binarydata = event.target.result;
       let workbook = XLSX.read(binarydata, { type: 'binary' })
       workbook.SheetNames.forEach(sheet => {
@@ -228,9 +224,9 @@ export class Navigation02Component {
   addDeletedItemInArchived() {
     const getArchivedProject = localStorage.getItem('archived-list')
     if (getArchivedProject) {
-      const currentlist = JSON.parse(getArchivedProject);
-      currentlist.push(this.archivedProject)
-      localStorage.setItem('archived-list', JSON.stringify(currentlist as any))
+      const currentList = JSON.parse(getArchivedProject);
+      currentList.push(this.archivedProject)
+      localStorage.setItem('archived-list', JSON.stringify(currentList as any))
     } else {
       localStorage.setItem('archived-list', JSON.stringify([this.archivedProject] as any))
     }
