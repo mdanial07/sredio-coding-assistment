@@ -1,1 +1,62 @@
-<div>Testing</div>
+<div class="project-list">
+  <div class="profile-details">
+    <div class="header">
+      <div class="heading">
+        <div class="title">Welcome Back, John Doe!</div>
+        <div class="dateRange">
+          <mat-form-field>
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+              <input matStartDate formControlName="start" placeholder="Start date">
+              <input matEndDate formControlName="end" placeholder="End date" (dateChange)="onChangeDate()">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="refresh-icon" (click)="openAddProjectDialog()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 6V18M18 12H6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="actions-and-searchbar">
+    <div class="search">
+      <input type="text" id="project-list" placeholder="Seach for project list" (input)="onFilterTextBoxChanged()">
+      <img src="assets/images/search.png" alt="search">
+    </div>
+    <div class="actions">
+      <div class="action-button">
+        <input type="file" class="upload" accept=".csv" id="upload_csv" (change)="uploadCSVFile($event)">
+        <label class="upload_csv" for="upload_csv">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M7 16H6C4.89543 16 4 15.1046 4 14V7C4 5.89543 4.89543 5 6 5H18C19.1046 5 20 5.89543 20 7V14C20 15.1046 19.1046 16 18 16H17M12 20V9M12 9L15 12M12 9L9 12"
+              stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span>Upload CSV</span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="ag-grid-table">
+    <ag-grid-angular
+      style="width: 100%; height: 100%;"
+      [columnDefs]="columnDefs"
+      [defaultColDef]="defaultColDef"
+      [rowSelection]="rowSelection"
+      [pagination]="true"
+      [paginationPageSize]="paginationPageSize"
+      [paginationPageSizeSelector]="paginationPageSizeSelector"
+      [allowContextMenuWithControlKey]="true"
+      [getContextMenuItems]="getContextMenuItems.bind(this)"
+      [autoGroupColumnDef]="autoGroupColumnDef"
+      [rowGroupPanelShow]="rowGroupPanelShow"
+      [rowData]="rowData"
+      [class]="themeClass"
+      (gridReady)="onGridReady($event)"
+    /> 
+  </div>
+</div>
