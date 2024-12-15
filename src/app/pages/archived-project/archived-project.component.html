@@ -1,0 +1,27 @@
+<div class="archived-projects">
+  <div class="header-top">
+    <div class="title">Archived Project list</div>
+  </div>
+  <div class="actions-and-searchbar">
+    <div class="search">
+      <input type="text" id="archived" placeholder="Seach for archived projects" (input)="onFilterTextBoxChanged()">
+      <img src="assets/images/search.png" alt="search">
+    </div>
+  </div>
+  <div class="ag-grid-table">
+    <ag-grid-angular 
+      class="ag-theme-quartz" 
+      style="width: 100%; height: 100%;"
+      [columnDefs]="columnDefs"
+      [defaultColDef]="defaultColDef"
+      [rowSelection]="rowSelection"
+      [pagination]="true"
+      [paginationPageSize]="paginationPageSize"
+      [paginationPageSizeSelector]="paginationPageSizeSelector"
+      [getContextMenuItems]="getContextMenuItems.bind(this)"
+      [rowData]="rowData"
+      [class]="themeClass"
+      (gridReady)="onGridReady($event)"
+    />
+  </div>
+</div>
