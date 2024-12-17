@@ -16,6 +16,11 @@ export const general_navigation = [
     img: 'assets/images/note-01.png'
   },
   {
+    title: 'Repository List',
+    route: '/repository-list',
+    img: 'assets/images/user-group.png'
+  },
+  {
     title: 'Navigation 04',
     route: '/nav4',
     img: 'assets/images/user-group.png'

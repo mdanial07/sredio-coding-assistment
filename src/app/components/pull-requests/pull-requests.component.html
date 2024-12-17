@@ -1,0 +1,27 @@
+<div class="pullrequest">
+  <div class="header-top">
+    <div class="title">Pull Requests List</div>
+  </div>
+  <div class="actions-and-searchbar">
+    <div class="search">
+      <input type="text" id="pullrequest" placeholder="Seach for PR number & title" (input)="onFilterTextBoxChanged($event)">
+      <img src="assets/images/search.png" alt="search">
+    </div>
+  </div>
+  <div class="ag-grid-table">
+    <ag-grid-angular 
+      class="ag-theme-quartz" 
+      style="width: 100%; height: 100%;"
+      [columnDefs]="columnDefs"
+      [defaultColDef]="defaultColDef"
+      [rowSelection]="rowSelection"
+      [rowModelType]="rowModelType"
+      [cacheBlockSize]="cacheBlockSize"
+      [pagination]="true"
+      [paginationPageSize]="paginationPageSize"
+      (paginationChanged)="onPaginationChanged($event)"
+      [class]="themeClass"
+      (gridReady)="onGridReady($event)"
+    />
+  </div>
+</div>

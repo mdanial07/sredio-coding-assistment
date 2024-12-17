@@ -1,0 +1,93 @@
+@import '../../utils/main.scss';
+
+.pullrequest {
+  padding: 20px 0;
+  font-family: $font_family;
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    .title {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 20.8px;
+    }
+
+    .view {
+      display: flex;
+      align-items: center;
+
+      .text {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 21px;
+        text-decoration-line: underline;
+        color: #091836;
+        cursor: pointer;
+        margin-right: 24px;
+      }
+
+      img {
+        width: 10px;
+        height: 14px;
+      }
+    }
+  }
+
+  .actions-and-searchbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    .search {
+      position: relative;
+
+      input {
+        border: 1px solid #B0B0B0;
+        border-radius: 8px;
+        height: 40px;
+        padding: 0 16px;
+        font-family: $font_family;
+        width: 500px;
+      }
+
+      img {
+        position: absolute;
+        width: 24px;
+        right: 16px;
+        top: 10px;
+      }
+    }
+  }
+
+  .ag-grid-table {
+    height: calc(100vh - 315px);
+  }
+}
+
+
+
+::ng-deep .ag-header,
+.ag-advanced-filter-header {
+  background-color: #FAFAFB !important;
+  font-family: $font_family;
+  font-size: 12px;
+}
+
+::ng-deep .ag-body .ag-layout-normal {
+  font-family: $font_family;
+  font-size: 12px;
+}
+
+::ng-deep .ag-column-first {
+  font-weight: 700;
+  color: #1A1A1B;
+
+  span {
+    display: flex;
+    align-items: center;
+  }
+}
