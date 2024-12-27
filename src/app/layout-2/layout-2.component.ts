@@ -9,6 +9,8 @@ import { CreditsComponent } from './pages/credits/credits.component';
 import { TotalStaffComponent } from './pages/total-staff/total-staff.component';
 import { StaffSalaryComponent } from './pages/staff-salary/staff-salary.component';
 import { OtherExpensesComponent } from './pages/other-expenses/other-expenses.component';
+import { SummaryService } from '../services/summary';
+import { TimesheetSummaryComponent } from '../components/timesheet-summary/timesheet-summary.component';
 
 @Component({
   selector: 'app-layout-2',
@@ -25,6 +27,7 @@ import { OtherExpensesComponent } from './pages/other-expenses/other-expenses.co
     TotalStaffComponent,
     StaffSalaryComponent,
     OtherExpensesComponent,
+    TimesheetSummaryComponent,
     NgIf,
   ],
   templateUrl: './layout-2.component.html',
@@ -37,9 +40,26 @@ export class Layout2Component {
     start: new Date("01-01-2024"),
     end: new Date("12-31-2024"),
   };
+  timesheet_summary: any = [];
 
+  constructor(
+    private summary: SummaryService,
+  ) { }
+
+  ngOnInit(): void {
+    this.getTimeSheet()
+  }
   selection(event: string) {
     this.page = event
+  }
+
+
+  getTimeSheet(): void {
+    this.summary.getTimesheetSummary().subscribe(timesheet => {
+      if (timesheet) {
+        this.timesheet_summary = timesheet;
+      }
+    })
   }
 
   dateRange(event: any) {
