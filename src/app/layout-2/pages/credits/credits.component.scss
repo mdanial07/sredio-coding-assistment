@@ -1,0 +1,131 @@
+.show-credits {
+  .financial-details {
+    .hours-list {
+      background-color: #d0d0d3;
+      display: flex;
+      justify-content: space-around;
+      padding-top: 2px;
+
+      .hour-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 20%;
+        cursor: pointer;
+        border-bottom: 1px solid #d0d0d3;
+
+        .no-of-hours {
+          color: #535354;
+          font-size: 15px;
+          font-weight: 500;
+          letter-spacing: 1px;
+          line-height: 26px;
+        }
+
+        .date {
+          color: #aca7a7;
+          letter-spacing: 1px;
+        }
+
+        .quarter {
+          color: #858080;
+          letter-spacing: 1px;
+        }
+
+        &:hover {
+          background-color: #fff;
+          color: #2437a5;
+          border-bottom: 1px solid #2437a5;
+        }
+      }
+    }
+
+    .financial-details-body {
+      padding: 24px;
+
+      .hours-section {
+        box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 36px 0;
+        margin-bottom: 20px;
+
+        .all-hours {
+          color: #a8a8a8;
+          text-align: center;
+
+          .total-hours {
+            font-size: 46px;
+            font-weight: 500;
+            line-height: 54px;
+          }
+
+          .blue-hour {
+            color: #2437a5;
+          }
+
+          .hours-date {
+            color: #a8a8a8;
+            font-size: 22px;
+            line-height: 30px;
+          }
+        }
+      }
+
+      .sred-projects {
+        box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+        padding: 20px 30px 36px;
+        margin-bottom: 20px;
+
+        .heading {
+          font-size: 20px;
+          font-weight: 500;
+          margin: 0 0 30px;
+        }
+
+        .sred-projects-boxes {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+
+          .sred-projects-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 110px;
+            border: 3px solid #111111;
+
+            .title {
+              font-size: 16px;
+            }
+          }
+
+          .gray {
+            background-color: #cccccc;
+          }
+
+          .light-green {
+            background-color: #b3e0a1;
+            border-left: unset;
+            border-right: unset;
+          }
+
+          .red {
+            background-color: #e85e49;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+::ng-deep .show-credits {
+  .mat-expansion-panel-body {
+    padding: 0 !important;
+  }
+}

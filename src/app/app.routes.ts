@@ -4,6 +4,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { Navigation02Component } from './pages/navigation02/navigation02.component';
 import { ArchivedProjectComponent } from './pages/archived-project/archived-project.component';
 import { ReposComponent } from './pages/repos/repos.component';
+import { Layout2Component } from './layout-2/layout-2.component';
 
 export const routes: Routes = [
   {
@@ -14,5 +15,8 @@ export const routes: Routes = [
       { path: 'archive-list', component: ArchivedProjectComponent },
       { path: 'repository-list', component: ReposComponent },
     ]
+  },
+  {
+    path: 'task-3', component: Layout2Component,
   },
 ];

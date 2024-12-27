@@ -1,0 +1,30 @@
+<div class="header-main">
+  <div class="header-items">
+    <div class="logo">
+      <img src="assets/images/logo.svg" alt="logo">
+    </div>
+    <div class="support">
+      <div>For support requests and/or suggestions</div>
+      <div>please email {{email2}}</div>
+    </div>
+    <div class="timezone">
+      Time Zone: EST
+    </div>
+  </div>
+  <div class="user-profile">
+    <div class="user-id">Logged in as {{email}}</div>
+    <div class="hamburger-icon"></div>
+  </div>
+</div>
+
+<div class="header-date-picker">
+  <mat-form-field>
+    <mat-label>Demo 04</mat-label>
+    <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+      <input matStartDate formControlName="start" placeholder="Start date">
+      <input matEndDate formControlName="end" placeholder="End date" (dateChange)="onChangeDate()">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  </mat-form-field>
+</div>

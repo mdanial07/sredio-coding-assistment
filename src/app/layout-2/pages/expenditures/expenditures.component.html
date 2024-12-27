@@ -1,0 +1,48 @@
+<div class="show-expenditures">
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="true" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+      <mat-expansion-panel-header>
+        <mat-panel-title> Confidential Financials Admin Panel </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="financial-details">
+        <div class="hours-list">
+          <div class="hour-item" *ngFor="let value of quarterSummaries" (click)="selectQuarter(value)"
+            [ngClass]="value.tab ? 'hour-active' : ''">
+            <div class="no-of-hours">$ {{value.rate | number}}</div>
+            <div class="date">{{value.date}}</div>
+            <div class="quarter">{{value.quarter}}</div>
+          </div>
+        </div>
+        <div class="financial-details-body">
+          <div class="hours-section">
+            <div class="all-hours">
+              <div class="total-hours blue-hour">$ {{currentYearRate ? (currentYearRate | number) : 0 | number}}</div>
+              <div class="hours-date">Current Year to Date SR&ED</div>
+            </div>
+            <div class="all-hours">
+              <div class="total-hours">$ {{fullYearRate ? (fullYearRate | number) : 0 | number}}</div>
+              <div class="hours-date">Full Year SR&ED (Projected)</div>
+            </div>
+          </div>
+          <div class="sred-projects">
+            <div class="heading">SR&ED Projects</div>
+            <div class="sred-projects-boxes">
+              <div class="sred-projects-item gray">
+                <div class="title">Unclaimed Work</div>
+                <div class="hours">${{unclaimed | number}}</div>
+              </div>
+              <div class="sred-projects-item light-green">
+                <div class="title">Rendering System</div>
+                <div class="hours">${{rendering_system | number}}</div>
+              </div>
+              <div class="sred-projects-item light-green">
+                <div class="title">API Performance</div>
+                <div class="hours">${{api_performance | number}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

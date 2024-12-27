@@ -1,0 +1,37 @@
+<div class="tabs-sections">
+  <div class="tab-heading">SR&ED Projections</div>
+  <div class="main-tabs">
+    <div class="tab-item left" [ngClass]="tab === 'hours' ? 'active' : ''" (click)="select('hours')">
+      <span *ngIf="tab === 'hours'">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.5 7L9 17.5L5 13.5" stroke="#fff" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </span>
+      Show Hours
+    </div>
+    <div class="tab-item" [ngClass]="tab === 'expenditures' ? 'active' : ''" (click)="select('expenditures')">
+      <span *ngIf="tab === 'expenditures'">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.5 7L9 17.5L5 13.5" stroke="#fff" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </span>
+      Show Expenditures
+    </div>
+    <div class="tab-item right" [ngClass]="tab === 'credits' ? 'active' : ''" (click)="select('credits')">
+      <span *ngIf="tab === 'credits'">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.5 7L9 17.5L5 13.5" stroke="#fff" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </span>
+      Show Credits
+    </div>
+  </div>
+  <div class="recalculation">
+    <div class="button">Recalculation Projections</div>
+    <div class="updates">Last Updated At: 2024-12-07</div>
+    <div class="updates">Last Updated Status: Completed</div>
+  </div>
+</div>

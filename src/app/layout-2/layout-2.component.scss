@@ -1,0 +1,30 @@
+.layout2 {
+  .layout2-header {
+    position: fixed;
+    width: 100%;
+    top: 0px;
+  }
+
+  .layout2-main-pages {
+    position: relative;
+    width: 100%;
+    top: 60px;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    padding: 10px;
+
+    .task-3-pages {
+      .financial-admin-panel {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+
+
+@media (min-width: 1370px) {
+  .container {
+    max-width: 1366px;
+  }
+}

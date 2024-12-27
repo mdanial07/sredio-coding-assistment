@@ -1,0 +1,31 @@
+<div class="layout2">
+  <div class="layout2-header">
+    <app-header (dateRange)="dateRange($event)">
+    </app-header>
+  </div>
+  <div class="layout2-main-pages">
+    <div class="container">
+      <div class="task-3-pages">
+        <div class="tabs">
+          <app-tabs-section 
+            (selectedTab)="selection($event)">
+          </app-tabs-section>
+        </div>
+        <div class="financial-admin-panel">
+          <app-hours 
+            *ngIf="page === 'hours' && headerDates"
+            [dates]="headerDates">
+          </app-hours>
+          <app-expenditures 
+            *ngIf="page === 'expenditures' && headerDates"
+            [dates]="headerDates">
+          </app-expenditures>
+          <app-credits 
+            *ngIf="page === 'credits' && headerDates"
+            [dates]="headerDates">
+          </app-credits>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

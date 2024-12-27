@@ -1,0 +1,63 @@
+.tabs-sections {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .tab-heading {
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+
+  .main-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #cdcdcd;
+    border-radius: 5px;
+
+    .tab-item {
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+
+      span {
+        margin-right: 10px;
+      }
+
+      &:hover {
+        background-color: #303f9f;
+        cursor: pointer;
+        color: #fff;
+      }
+    }
+
+    .left {
+      border-right: 1px solid #cdcdcd;
+    }
+
+    .right {
+      border-left: 1px solid #cdcdcd;
+    }
+
+    .active {
+      background-color: #303f9f;
+      color: #fff;
+      border: 1px solid #303f9f;
+    }
+  }
+
+  .recalculation {
+    .button {
+      background-color: #303f9f;
+      color: #fff;
+      width: fit-content;
+      padding: 5px 10px;
+      border-radius: 3px;
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+  }
+}
