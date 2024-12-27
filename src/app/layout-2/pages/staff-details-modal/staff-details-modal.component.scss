@@ -1,0 +1,123 @@
+.staff-details-modal {
+  padding: 24px;
+  min-width: 700px;
+
+  .detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .user-name {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .main-tabs {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #cdcdcd;
+      border-radius: 5px;
+
+      .tab-item {
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+
+        span {
+          margin-right: 10px;
+        }
+
+        &:hover {
+          background-color: #303f9f;
+          cursor: pointer;
+          color: #fff;
+        }
+      }
+
+      .left {
+        border-right: 1px solid #cdcdcd;
+      }
+
+      .right {
+        border-left: 1px solid #cdcdcd;
+      }
+
+      .active {
+        background-color: #303f9f;
+        color: #fff;
+        border: 1px solid #303f9f;
+      }
+    }
+  }
+
+  .detail-body {
+    .single-item {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+    }
+
+    .sred-projects {
+      margin: 15px 0;
+
+      .heading {
+        font-size: 20px;
+        font-weight: 500;
+        margin: 0 0 12px;
+      }
+
+      .sred-projects-boxes {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .sred-projects-item {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          width: 100%;
+          height: 110px;
+          border: 3px solid #111111;
+
+          .title {
+            font-size: 16px;
+          }
+        }
+
+        .gray {
+          background-color: #cccccc;
+        }
+
+        .theme-color {
+          background-color: #2437a5;
+          border-left: unset;
+          color: #fff;
+          border-right: unset;
+        }
+      }
+    }
+
+    .allocation {
+      font-size: 18px;
+      margin: 10px 0 20px;
+    }
+
+    .action {
+      margin: 10px 0;
+      display: flex;
+      justify-content: flex-end;
+
+      .button-item {
+        padding: 5px 20px;
+        box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #ccc;
+      }
+    }
+  }
+}

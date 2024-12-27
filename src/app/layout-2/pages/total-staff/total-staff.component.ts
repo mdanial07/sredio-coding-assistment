@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AgCharts } from "ag-charts-angular";
 import { AgChartOptions } from "ag-charts-community";
 import { StaffService } from '../../../services/staff.service';
 import { NgFor, NgIf } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
+import { StaffDetailsModalComponent } from '../staff-details-modal/staff-details-modal.component';
 
 @Component({
   selector: 'app-total-staff',
@@ -18,6 +20,7 @@ import { NgFor, NgIf } from '@angular/common';
 export class TotalStaffComponent {
   public barChartOptions: AgChartOptions | any;
   public mobileStaffBarChart: AgChartOptions | any;
+  readonly dialog = inject(MatDialog);
 
   staffMembers: any = [];
   mobileStaffMembers: any = [];
@@ -55,7 +58,6 @@ export class TotalStaffComponent {
           }
         ],
       };
-      console.log('this.barChartOptions', this.barChartOptions)
 
       this.staffMembers = members;
     })
@@ -92,7 +94,15 @@ export class TotalStaffComponent {
   }
 
   selectStaffMember(value: any): void {
-    console.log('value', value)
+
+    const dialogRef = this.dialog.open(StaffDetailsModalComponent, {
+      data: value,
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result !== undefined) {
+      }
+    })
   }
 
   selectMobileStaffMember(value: any): void {

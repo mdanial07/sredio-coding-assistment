@@ -1,0 +1,75 @@
+<div class="staff-details-modal">
+  <div class="detail-header">
+    <div class="user-name">{{data.name}}</div>
+    <div class="main-tabs">
+      <div class="tab-item left" [ngClass]="tab === 'hours' ? 'active' : ''" (click)="select('hours')">
+        <span *ngIf="tab === 'hours'">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.5 7L9 17.5L5 13.5" stroke="#fff" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </span>
+        Show Hours
+      </div>
+      <div class="tab-item" [ngClass]="tab === 'expenditures' ? 'active' : ''" (click)="select('expenditures')">
+        <span *ngIf="tab === 'expenditures'">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.5 7L9 17.5L5 13.5" stroke="#fff" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </span>
+        Show Expenditures
+      </div>
+      <div class="tab-item right" [ngClass]="tab === 'credits' ? 'active' : ''" (click)="select('credits')">
+        <span *ngIf="tab === 'credits'">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.5 7L9 17.5L5 13.5" stroke="#fff" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </span>
+        Show Credits
+      </div>
+    </div>
+  </div>
+  <div class="detail-body">
+    <div class="single-item">
+      <div><b>Date Range: </b> {{data.details.rangeDate}}</div>
+      <div><b>Hire Date: </b> {{data.details.hireDate}}</div>
+    </div>
+
+    <div class="single-item">
+      <div><b>Province: </b> {{data.details.province}}</div>
+      <div><b>End Date: </b> {{data.details.endDate}}</div>
+    </div>
+
+    <div class="sred-projects">
+      <div class="heading">SR&ED Projects</div>
+      <div class="sred-projects-boxes">
+        <div class="sred-projects-item gray">
+          <div class="title">Unclaimed Work</div>
+          <div class="hours">{{data.details.unclaimed | number}} hours</div>
+        </div>
+        <div class="sred-projects-item theme-color">
+          <div class="title">Rendering System</div>
+          <div class="hours">{{data.details.rendering_system | number}} hours</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="single-item">
+      <div><b>SR&ED Hours: </b> {{data.details.sredHours | number}}</div>
+    </div>
+
+    <div class="single-item">
+      <div><b>Total Hours: </b> {{data.details.total | number}}</div>
+    </div>
+
+    <div class="allocation">
+      <div><b>SR&ED Allocation: {{data.details.allocation}} %</b></div>
+    </div>
+
+    <div class="action">
+      <div class="button-item" (click)="onNoClick()">Ok</div>
+    </div>
+  </div>
+</div>

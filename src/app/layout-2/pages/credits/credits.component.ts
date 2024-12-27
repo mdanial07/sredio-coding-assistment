@@ -104,7 +104,6 @@ export class CreditsComponent {
 
   calculateTypewiseSummary(startDate: any, endDate: any) {
     const typewiseSummary = this.credits.getRatesByTypeInDateRange(startDate, endDate);
-    console.log('typewiseSummary', typewiseSummary)
     this.unclaimed = typewiseSummary.find((summary: any) => summary.type === "Unclaimed Work").rate
     this.rendering_system = typewiseSummary.find((summary: any) => summary.type === "Rendering System").rate
     this.api_performance = typewiseSummary.find((summary: any) => summary.type === "API Performance").rate
