@@ -1,0 +1,47 @@
+.total-staff {
+  margin: 30px 0 20px;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  background: #fff;
+  padding: 24px;
+
+  .staff-title {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .staff-details {
+    padding: 20px 10px;
+
+    .heading {
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    .chart {
+      padding-top: 20px;
+      padding-bottom: 5px;
+      border-radius: 10px;
+      position: relative;
+
+      .staff-names-list {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        padding: 0 18px;
+        padding-left: 50px;
+        background-color: #FBFBFB;
+        margin-top: -80px;
+        z-index: 100;
+        position: absolute;
+
+        .staff-name {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .barchart {
+      width: 100%;
+    }
+  }
+}

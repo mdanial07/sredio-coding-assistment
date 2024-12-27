@@ -1,0 +1,22 @@
+<div class="staff-salary">
+  <div class="staff-title">Staff Salary</div>
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="true" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+      <mat-expansion-panel-header>
+        <mat-panel-title> Staff Salary </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="staff-details">
+        <div>
+          <ag-grid-angular 
+            class="ag-theme-quartz" 
+            style="width: 100%; height: 351px;"
+            [rowHeight]="rowHeight"
+            [rowData]="rowData"
+            [columnDefs]="colDefs"
+            (gridReady)="onGridReady($event)"
+          />
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

@@ -6,6 +6,9 @@ import { TabsSectionComponent } from './pages/tabs-section/tabs-section.componen
 import { HoursComponent } from './pages/hours/hours.component';
 import { ExpendituresComponent } from './pages/expenditures/expenditures.component';
 import { CreditsComponent } from './pages/credits/credits.component';
+import { TotalStaffComponent } from './pages/total-staff/total-staff.component';
+import { StaffSalaryComponent } from './pages/staff-salary/staff-salary.component';
+import { OtherExpensesComponent } from './pages/other-expenses/other-expenses.component';
 
 @Component({
   selector: 'app-layout-2',
@@ -19,6 +22,9 @@ import { CreditsComponent } from './pages/credits/credits.component';
     HoursComponent,
     ExpendituresComponent,
     CreditsComponent,
+    TotalStaffComponent,
+    StaffSalaryComponent,
+    OtherExpensesComponent,
     NgIf,
   ],
   templateUrl: './layout-2.component.html',

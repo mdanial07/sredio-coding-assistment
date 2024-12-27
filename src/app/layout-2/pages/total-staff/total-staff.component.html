@@ -1,0 +1,26 @@
+<div class="total-staff">
+  <div class="staff-title">Total Staff Included in Claim (7)</div>
+  <div class="staff-details">
+    <div class="heading">Staff not Assigned to Team</div>
+    <div class="chart barchart" *ngIf="barChartOptions.data">
+      <ag-charts [options]="barChartOptions" style="width: 100%; height: 370px; display: block"></ag-charts>
+      <div class="staff-names-list">
+        <div class="staff-name" *ngFor="let value of staffMembers">
+          <div (click)="selectStaffMember(value)">{{value.name}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="staff-details">
+    <div class="heading">Mobile Team</div>
+    <div class="chart barchart" *ngIf="mobileStaffBarChart.data">
+      <ag-charts [options]="mobileStaffBarChart" style="width: 100%; height: 370px; display: block"></ag-charts>
+      <div class="staff-names-list">
+        <div class="staff-name" *ngFor="let value of mobileStaffMembers">
+          <div (click)="selectMobileStaffMember(value)">{{value.name}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
